@@ -58,7 +58,7 @@ const HomeScreen = () => {
     <View>
       <View style={{ padding: 10 }}>
       
-          <User />
+          <User item={undefined} />
        
       </View>
     </View>

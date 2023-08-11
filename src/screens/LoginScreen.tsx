@@ -11,10 +11,10 @@ import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const LoginScreen = ({}) => {
+const LoginScreen = ({navigation}:any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigation = useNavigation()
+  
   const handleLogin = () => {
     const user = {
       email: email,
@@ -28,12 +28,13 @@ const LoginScreen = ({}) => {
         backgroundColor: "white",
         padding: 10,
         alignItems: "center",
+        marginBottom: 50,
       }}
     >
       <KeyboardAvoidingView>
         <View
           style={{
-            marginTop: 100,
+            marginTop: 50,
             justifyContent: "center",
             alignItems: "center",
           }}
@@ -114,7 +115,7 @@ const LoginScreen = ({}) => {
           </Pressable>
 
           <Pressable
-            
+            onPress={() => navigation.navigate("Register")}
             style={{ marginTop: 15 }}
           >
             <Text style={{ textAlign: "center", color: "gray", fontSize: 16 }}>
