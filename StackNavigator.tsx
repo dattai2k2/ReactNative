@@ -21,6 +21,9 @@ const StackNavigator = () => {
           name="Register"
           component={RegisterScreen}
           options={{ headerShown: false }} />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
