@@ -6,7 +6,7 @@ import { UserType } from "../../UserContext";
 const UserChat = ({ item }:any) => {
   const { userId, setUserId } = useContext(UserType);
   const [messages, setMessages] = useState([]);
-  const navigation = useNavigation();
+  const navigation:any = useNavigation();
   // const fetchMessages = async () => {
   //   try {
   //     const response = await fetch(
@@ -46,11 +46,9 @@ const UserChat = ({ item }:any) => {
   // };
   return (
     <Pressable
-      // onPress={() =>
-      //   navigation.navigate("Messages", {
-      //     recepientId: item._id,
-      //   })
-      // }
+      onPress={() =>
+        navigation.navigate("Messages", {recepientId: item._id,})
+      }
       style={{
         flexDirection: "row",
         alignItems: "center",
