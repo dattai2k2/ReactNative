@@ -10,6 +10,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import api from "../../apiConfig";
 
 const LoginScreen = ({navigation}:any) => {
   const [email, setEmail] = useState("");
@@ -38,7 +39,7 @@ const LoginScreen = ({navigation}:any) => {
     };
 
     axios
-      .post("http://192.168.0.105:8000/login", user)
+      .post(api.port+"/login", user)
       .then((response) => {
         console.log(response);
         const token = response.data.token;
@@ -96,7 +97,7 @@ const LoginScreen = ({navigation}:any) => {
                 width: 300,
               }}
               placeholderTextColor={"black"}
-              placeholder="enter Your Email"
+              placeholder="Enter your email"
             />
           </View>
 
@@ -117,7 +118,7 @@ const LoginScreen = ({navigation}:any) => {
                 width: 300,
               }}
               placeholderTextColor={"black"}
-              placeholder="Passowrd"
+              placeholder="Enter your passowrd"
             />
           </View>
 
